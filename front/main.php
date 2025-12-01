@@ -49,7 +49,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
 <nav class="navbar navbar-expand-lg fixed-top p-3" style="background-color:#1c1c1cff;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="#">
-            <img src="./img/image0 (1).png" alt="AZK" style="height: 40px;">
+            <img src="\SVGLOGA\sadasdsd.svg" alt="AZK" style="height: 50px;">
         </a>
 
         <!-- Hamburger -->
@@ -66,6 +66,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#">Domů</a></li>
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#">Závody</a></li>
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#textx">O nás</a></li>
+                <li class="nav-item active-element"><a class="nav-link text-white" href="#textx">Fotky</a></li>
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#kontakt">Kontakt</a></li>
                 <?php if(isset($_SESSION['role'])): ?>
                     <li class="nav-item active-element"><a class="nav-link text-white" href="#">Bezpečnost</a></li>

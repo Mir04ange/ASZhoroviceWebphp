@@ -26,61 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+  <link rel="stylesheet" href="\front\css\prihlaska.css">
   <meta charset="UTF-8">
   <title>Přihlášení do závodu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- důležité pro mobily -->
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <style>
-    body {
-      min-height: 100vh;
-      background: linear-gradient(0deg, #840e0eff, #000000);
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-    .form-section {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    .form-section h3 {
-      border-bottom: 1px solid #fff2;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-    }
-    label { font-weight: 500; }
-    .btn-custom {
-      background: #ff2020;
-      border: none;
-      font-size: 1.1rem;
-      padding: 12px;
-    }
-    .btn-custom:hover {
-      background: #cc0000;
-    }
-        .btn-customs {
-      background: #c1c1c1ff;
-      border: 1px solid #000000;
-      font-size: 1.1rem;
-      padding: 12px;
-      transition: 0.5s;
-    }
-    .btn-customs:hover {
-      background: #ab16b3ff;
-      border: none;
-    }
-    .container {
-      max-width: 900px;
-    }
-    /* mobilní optimalizace */
-    @media (max-width: 576px) {
-      h1 { font-size: 1.8rem; }
-      .form-section { padding: 15px; }
-      label { font-size: 0.9rem; }
-      input, textarea, select { font-size: 1rem; padding: 10px; }
-    }
-  </style>
+  
 </head>
 <body>
 <div class="container py-5">
