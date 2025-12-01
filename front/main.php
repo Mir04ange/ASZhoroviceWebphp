@@ -28,182 +28,13 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASK Hořovice</title>
-    
+    <link rel="stylesheet" href="/front/css/btn.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="front/css/Carousel.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="../front/scss/footer.scss">
-    <link rel="stylesheet" href="../front/css/mujtext.css">
-    <link rel="stylesheet" href="../front/css/animation.css">
-    
-    <style>
-    .btn-red {
-        background: linear-gradient(145deg, #cc0000, #ff1a1a);
-        color: #fff;
-        padding: 12px 28px;
-        border: none;
-        border-radius: 16px;
-        font-size: 18px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-left: 50px;
-        text-decoration: none;
-        box-shadow: 0 6px 15px rgba(204, 0, 0, 0.3);
-        animation: pulse 2s infinite;
-    }
-
-    .btn-red:hover {
-        background: linear-gradient(145deg, #e60000, #ff3333);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(230, 0, 0, 0.5);
-        animation: none;
-    }
-
-    .btn-red:active {
-        transform: translateY(1px);
-        box-shadow: 0 4px 10px rgba(230, 0, 0, 0.4);
-    }
-
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            box-shadow: 0 6px 15px rgba(204, 0, 0, 0.3);
-        }
-        50% {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(204, 0, 0, 0.5);
-        }
-        100% {
-            transform: scale(1);
-            box-shadow: 0 6px 15px rgba(204, 0, 0, 0.3);
-        }
-    }
-
-    .autoShow {
-        animation: text-appeat both;
-        animation-timeline: view();
-        animation-range: entry 50% cover 60vh;
-    }
-
-    .imageReveal {
-        animation: imgReveal both;
-        animation-range: entry 20% cover 100vh;
-        animation-timeline: view(50% 25%);
-    }
-
-    .fadeUp {
-        animation: fadeUp both;
-        animation-timeline: view();
-    }
-
-    .timeline-item:nth-child(1) {
-        animation-range: entry 20% cover 40%;
-    }
-
-    .timeline-item:nth-child(2) {
-        animation-range: entry 40% cover 60%;
-    }
-
-    .timeline-item:nth-child(3) {
-        animation-range: entry 60% cover 80%;
-    }
-
-    .autoBlur {
-        animation: autoBlurAnimation linear both;
-        animation-timeline: view(50% auto);
-    }
-
-    @keyframes text-appeat {
-        from {
-            opacity: 0;
-            transform: translateY(100px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-    }
-
-    @keyframes imgReveal {
-        from {
-            filter: saturate(0) contrast(4) brightness(.1) blur(5px);
-            opacity: 0;
-            scale: .90;
-            translate: 0 4rem;
-        }
-        to {
-            filter: none;
-            opacity: 1;
-            scale: 1;
-            translate: 0 0;
-        }
-    }
-
-    @keyframes fadeUp {
-        from {
-            opacity: 0;
-            transform: translateY(10px) scale(0.5);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-
-    @keyframes autoBlurAnimation {
-        0% {
-            filter: blur(20px);
-        }
-        100% {
-            filter: blur(0px);
-        }
-    }
-
-    .navbar-toggler {
-        padding: 0;
-        outline: none !important;
-        box-shadow: none !important;
-    }
-
-    .toggler-icon {
-        width: 25px;
-        height: 20px;
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    .toggler-icon span {
-        background: #fff;
-        position: absolute;
-        height: 3px;
-        width: 100%;
-        left: 0;
-        transition: 0.3s ease;
-    }
-
-    .toggler-icon span:nth-child(1) { top: 0; }
-    .toggler-icon span:nth-child(2) { top: 8px; }
-    .toggler-icon span:nth-child(3) { top: 16px; }
-
-    .navbar-toggler.collapsed .toggler-icon span:nth-child(1) { transform: rotate(0) translateY(0); }
-    .navbar-toggler.collapsed .toggler-icon span:nth-child(2) { opacity: 1; }
-    .navbar-toggler.collapsed .toggler-icon span:nth-child(3) { transform: rotate(0) translateY(0); }
-
-    .navbar-toggler:not(.collapsed) .toggler-icon span:nth-child(1) {
-        transform: rotate(45deg);
-        top: 8px;
-    }
-    .navbar-toggler:not(.collapsed) .toggler-icon span:nth-child(2) {
-        opacity: 0;
-    }
-    .navbar-toggler:not(.collapsed) .toggler-icon span:nth-child(3) {
-        transform: rotate(-45deg);
-        top: 8px;
-    }
-    </style>
-    
+    <link rel="stylesheet" href="/front/scss/footer.scss">
+    <link rel="stylesheet" href="/front/css/mujtext.css">
+    <link rel="stylesheet" href="/front/css/navbars.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         window.addEventListener("scroll", function() {
@@ -242,8 +73,6 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
                     <li class="nav-item active-element"><a class="nav-link text-white" href="../back/view_logs.php">Logy</a></li>
                 <?php endif; ?>
-
-                <!-- Přihlášení / Odhlášení na MOBILECH -->
                 <li class="nav-item d-lg-none mt-2">
                     <?php if(!isset($_SESSION['username'])): ?>
                         <a href="./Login.php" class="btn btn-outline-light w-100">Přihlášení</a>
@@ -265,56 +94,6 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
     </div>
 </nav>
 
-<!-- CSS pro bílý hamburger s animací -->
-<style>
-.navbar-toggler {
-    padding: 0;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.toggler-icon {
-    width: 25px;
-    height: 20px;
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.toggler-icon span {
-    background: #fff;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    transition: 0.3s ease;
-}
-
-.toggler-icon span:nth-child(1) { top: 0; }
-.toggler-icon span:nth-child(2) { top: 8px; }
-.toggler-icon span:nth-child(3) { top: 16px; }
-
-/* Default stav (☰) */
-.navbar-toggler.collapsed .toggler-icon span:nth-child(1) { transform: rotate(0) translateY(0); }
-.navbar-toggler.collapsed .toggler-icon span:nth-child(2) { opacity: 1; }
-.navbar-toggler.collapsed .toggler-icon span:nth-child(3) { transform: rotate(0) translateY(0); }
-
-/* Animace do X */
-.navbar-toggler:not(.collapsed) .toggler-icon span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 8px;
-}
-.navbar-toggler:not(.collapsed) .toggler-icon span:nth-child(2) {
-    opacity: 0;
-}
-.navbar-toggler:not(.collapsed) .toggler-icon span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 8px;
-}
-</style>
-
-
-</style>
 <!-- Carousel -->
 <div class="container-fluid px-0 mt-5 pt-5">
   <div id="demo" class="carousel slide" data-bs-ride="carousel">
