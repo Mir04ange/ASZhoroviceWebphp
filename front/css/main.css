@@ -3,9 +3,12 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     background: linear-gradient(0deg, #840e0eff, #000000);
 }
+
+
 
 .navbar {
     transition: all 0.3s ease;

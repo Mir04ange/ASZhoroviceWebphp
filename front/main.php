@@ -28,6 +28,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASK Hořovice</title>
+    <script src="\front\js\cursor.js"></script>
     <link rel="stylesheet" href="/front/css/btn.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="front/css/Carousel.css">
