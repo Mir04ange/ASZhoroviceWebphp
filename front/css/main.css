@@ -91,6 +91,10 @@ nav.navbar.scrolled,
     filter: invert(1) drop-shadow(0 0 5px rgba(0,0,0,0.7));
 }
 
+h5, .CarouselImgText{
+    color: white;
+    text-align: center;
+}
 .btn-black {
     background-color: #000;
     color: #fff;

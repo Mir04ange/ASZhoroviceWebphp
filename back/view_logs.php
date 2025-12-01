@@ -14,7 +14,6 @@ $logger->log('VIEW_LOGS', 'Admin accessed logs page', 'success');
 
 $filter_action = isset($_GET['action']) ? $_GET['action'] : null;
 $logs = $logger->getLogs(200, $filter_action);
-
 $actions_list = array('LOGIN', 'LOGOUT', 'CAROUSEL_UPDATE', 'RACE_DATE_UPDATE', 'REGISTRATION_DELETE', 'PAYMENT_STATUS_UPDATE', 'LOGIN_FAILED', 'VIEW_LOGS');
 
 ?>
@@ -25,76 +24,26 @@ $actions_list = array('LOGIN', 'LOGOUT', 'CAROUSEL_UPDATE', 'RACE_DATE_UPDATE', 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Logs - ASK Hořovice</title>
+    <link rel="stylesheet" href="/front/css/backLogsStyle.css">
     <link rel="stylesheet" href="../front/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            background: linear-gradient(0deg, #840e0eff, #000000);
-            color: #fff;
-            padding-top: 80px;
-        }
-        .navbar {
-            background-color: #1c1c1cff;
-        }
-        .container {
-            background-color: rgba(28, 28, 28, 0.9);
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 30px;
-        }
-        table {
-            border-color: #444;
-        }
-        th, td {
-            border-color: #444;
-            padding: 12px;
-        }
-        th {
-            background-color: rgba(100, 0, 0, 0.5);
-            font-weight: bold;
-        }
-        tr:hover {
-            background-color: rgba(100, 100, 100, 0.2);
-        }
-        .badge {
-            padding: 5px 10px;
-        }
-        .success {
-            background-color: #28a745;
-        }
-        .failed {
-            background-color: #dc3545;
-        }
-        .btn {
-            margin: 5px;
-        }
-        a {
-            color: #0275d8;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .filter-section {
-            margin-bottom: 20px;
-        }
-    </style>
+    
 </head>
 <body>
 
 <nav class="navbar navbar-dark fixed-top">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">Admin Logs - ASK Hořovice</span>
-        <a href="../front/main.php" class="btn btn-outline-light btn-sm">Zpět na Main</a>
+        <a href="../front/main.php" class="btn btn-outline-light btn-sm prettier">Zpět na Main</a>
     </div>
 </nav>
 
 <div class="container mt-5">
     <h2 class="mb-4">Admin Activity Logs</h2>
 
-    <div class="filter-section">
+    <div class="filter-section ">
         <h5>Filtrovat podle akce:</h5>
-        <div class="btn-group mb-3" role="group">
-            <a href="?action=" class="btn btn-outline-light <?php echo $filter_action === null ? 'active' : ''; ?>">Vše</a>
+        <div class="btn-group mb-3 " role="group">
+            <a href="?action=" class="btn btn-outline-light prettier <?php echo $filter_action === null ? 'active' : ''; ?>">Vše</a>
             <?php foreach ($actions_list as $act): ?>
                 <a href="?action=<?php echo urlencode($act); ?>" class="btn btn-outline-light <?php echo $filter_action === $act ? 'active' : ''; ?>">
                     <?php echo $act; ?>

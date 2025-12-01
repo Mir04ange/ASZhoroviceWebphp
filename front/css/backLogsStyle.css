@@ -1,0 +1,112 @@
+body {
+            /* Use a fixed, full-viewport gradient to avoid tiling/glitches on some displays */
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(180deg, #840e0eff 0%, #000000 100%);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+            padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .navbar {
+            background-color: #1c1c1cff;
+        }
+        .container {
+            background-color: rgba(28, 28, 28, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center; /* center headings and inline elements inside container */
+        }
+        table {
+            border-color: #444;
+        }
+        /* Center the table container so the table appears centered on wide screens */
+        .table-responsive {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Keep table content centered but prevent it from stretching too wide */
+        .table-responsive .table {
+            display: inline-table;
+            max-width: 1100px; /* reasonable max width for readability */
+            width: 100%;
+        }
+        th, td {
+            border-color: #444;
+            padding: 12px;
+            vertical-align: middle;
+            text-align: center; /* center table cell content */
+            word-break: break-word;
+        }
+        th {
+            background-color: rgba(100, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: rgba(100, 100, 100, 0.2);
+        }
+
+        /* On small screens, let the table fill the container normally */
+        @media (max-width: 767px) {
+            .table-responsive {
+                display: block;
+            }
+            .table-responsive .table {
+                display: table;
+                width: 100%;
+                max-width: none;
+            }
+        }
+        .badge {
+            padding: 5px 10px;
+        }
+        .success {
+            background-color: #28a745;
+        }
+        .failed {
+            background-color: #dc3545;
+        }
+        .btn {
+            margin: 5px;
+        }
+        a {
+            color: #0275d8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .filter-section {
+            margin-bottom: 20px;
+        }
+
+        /* Center the action list (btn-group) and make it responsive */
+        .filter-section .btn-group {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        /* Ensure buttons don't stretch too wide on small screens */
+        .filter-section .btn-group .btn {
+            white-space: nowrap;
+        }
+   
+        .prettier {
+            font-family: 'Courier New', Courier, monospace;
+            text-decoration: none;
+            text-underline-offset: none;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            
+       
+        }

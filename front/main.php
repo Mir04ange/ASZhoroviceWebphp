@@ -133,14 +133,13 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
   </div>
 </div>
 
-
 <!-- Admin formuláře -->
 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
 <div class="container mt-4">
     <h5>Upravit Carousel</h5>
     <form action="update_carousel.php" method="POST" enctype="multipart/form-data">
     <?php for($i=1; $i<=5; $i++): ?>
-      <label>Obrázek <?= $i ?>:</label>
+      <label class="CarouselImgText">Obrázek <?= $i ?>:</label>
       <input type="file" name="carousel_img<?= $i ?>" accept="image/*" class="form-control mb-2">
       <input type="text" name="carousel_url<?= $i ?>" placeholder="nebo vložte URL obrázku" class="form-control mb-2">
     <?php endfor; ?>
