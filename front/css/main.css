@@ -1,0 +1,123 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(0deg, #840e0eff, #000000);
+}
+
+.navbar {
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.navbar.scrolled,
+nav.navbar.scrolled,
+.navbar.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    transition: background-color 0.3s ease !important;
+    background-image: none !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin: 0 10px;
+}
+
+.btn-login {
+    background-color: #fff;
+    color: #222;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #ddd;
+}
+
+.custom-nav {
+    background: transparent;
+}
+
+@media (min-width: 768px) {
+    .custom-nav {
+        background-color: #373636;
+        border-radius: 10px;
+        padding: 0 10px;
+    }
+}
+
+.custom-nav .nav-link {
+    color: white !important;
+}
+
+.carousel-item img {
+    width: 900px;
+    height: 500px;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        width: 600px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) drop-shadow(0 0 5px rgba(0,0,0,0.7));
+}
+
+.btn-black {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.center-text {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+       

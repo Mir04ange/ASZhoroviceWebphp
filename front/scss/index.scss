@@ -1,0 +1,76 @@
+nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background: #111;
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+
+      button {
+        background: none;
+        border: none;
+        font-size: 1rem;
+        color: #aaa;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      &.active button {
+        color: #0ff; // aktivní odkaz zvýrazněný
+      }
+    }
+  }
+
+  // animovaný element pod aktivním tlačítkem
+  .active-element {
+    --active-element-x: 0px;
+    --active-element-y: 0px;
+    --active-element-width: 0px;
+    --active-element-scale-x: 1;
+    --active-element-opacity: 0;
+    --active-element-show: 0;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: var(--active-element-width);
+    height: 3px;
+    background: linear-gradient(90deg, #0ff, #f0f);
+    border-radius: 2px;
+
+    transform: translateX(var(--active-element-x))
+      translateY(var(--active-element-y))
+      scaleX(var(--active-element-scale-x));
+    opacity: var(--active-element-opacity);
+
+    // když je aktivní, ukáže se
+    &[data-active="true"] {
+      opacity: 1;
+    }
+
+    // efekt při přidání SVG (laser beam)
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200%;
+      height: 200%;
+      pointer-events: none;
+    }
+  }
+}

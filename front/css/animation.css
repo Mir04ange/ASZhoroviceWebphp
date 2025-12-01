@@ -1,0 +1,23 @@
+  .podText {
+      position: relative;
+      text-decoration: none;   /* odstraní klasické podtržení */
+           /* barva textu */
+      font-size: 20px;
+      font-weight: bold;
+      
+    }
+
+.podText::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;   /* čára bude 10px pod textem */
+  width: 0;
+  height: 2px;
+  background: #ff0000ff;
+  transition: width 0.3s ease;
+}
+
+    .podText:hover::after {
+      width: 100%;             /* plynule se roztáhne */
+    }

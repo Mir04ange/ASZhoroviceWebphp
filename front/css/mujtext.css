@@ -1,0 +1,71 @@
+/* --- Globální styl --- */
+
+
+/* --- Wrapper --- */
+.onas-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  padding: 30px 40px;
+}
+
+/* --- Nadpisy --- */
+.onas-title {
+  text-align: center;
+  font-size: 2em;
+  color: #c62828; /* sportovní červená */
+  margin-top: 0;
+}
+
+.onas-subtitle {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: #c62828;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+/* --- Text --- */
+.onas-text {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.onas-highlight {
+  font-weight: bold;
+  color: #000;
+}
+
+/* --- Seznamy --- */
+.onas-list {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.onas-list li {
+  margin-bottom: 8px;
+}
+
+/* --- Kontakt box --- */
+.onas-contact {
+  margin-top: 30px;
+  background: #eee;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+/* --- Odkazy --- */
+.onas-link {
+  color: #1565c0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.onas-link:hover {
+  text-decoration: underline;
+}

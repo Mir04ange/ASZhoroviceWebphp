@@ -1,0 +1,29 @@
+[
+    {
+        "team": "",
+        "ridic_jmeno": "",
+        "ridic_op": "",
+        "ridic_rc": "",
+        "ridic_rp": "",
+        "ridic_adresa": "",
+        "ridic_kontakt": "",
+        "ridic_pojistovna": "",
+        "spoluj_jmeno": "",
+        "spoluj_op": "",
+        "spoluj_rc": "",
+        "spoluj_rp": "",
+        "spoluj_adresa": "",
+        "spoluj_kontakt": "",
+        "spoluj_pojistovna": "",
+        "auto_trida": "",
+        "auto_spz": "",
+        "auto_znacka": "",
+        "auto_typ": "",
+        "auto_obsah": "",
+        "auto_pojistovna": "",
+        "info": "",
+        "souhlas": "on",
+        "datum_zavodu": "2026-03-27",
+        "datum_prihlaseni": "2025-09-30 22:34:43"
+    }
+]
