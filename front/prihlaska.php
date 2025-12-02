@@ -26,12 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <link rel="stylesheet" href="\front\css\prihlaska.css">
+
   <meta charset="UTF-8">
   <title>Přihlášení do závodu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- důležité pro mobily -->
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  
+    <link rel="stylesheet" href="./css/prihlaska.css">
 </head>
 <body>
 <div class="container py-5">
