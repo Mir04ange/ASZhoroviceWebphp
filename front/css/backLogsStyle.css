@@ -2,7 +2,7 @@ body {
             /* Use a fixed, full-viewport gradient to avoid tiling/glitches on some displays */
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(180deg, #840e0eff 0%, #000000 100%);
+            background-color: #1c1c1cff;
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
@@ -109,4 +109,15 @@ body {
             border-radius: 5px;
             
        
+        }
+        .navbar {
+            justify-content: center !important;
+            text-align: center;
+        }
+
+        .navbar .container-fluid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem; /* optional spacing */
         }

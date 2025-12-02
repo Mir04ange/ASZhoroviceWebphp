@@ -30,7 +30,7 @@ $actions_list = array('LOGIN', 'LOGOUT', 'CAROUSEL_UPDATE', 'RACE_DATE_UPDATE', 
 </head>
 <body>
 
-<nav class="navbar navbar-dark fixed-top">
+<nav class="navbar navbar-dark fixed-top display-flex justify-content-between p-3" >
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">Admin Logs - ASK Hořovice</span>
         <a href="../front/main.php" class="btn btn-outline-light btn-sm prettier">Zpět na Main</a>
