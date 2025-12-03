@@ -10,7 +10,6 @@ require_once './Database/db.php';
 require_once './Database/AdminLogger.php';
 
 $logger = new AdminLogger($conn, $_SESSION['user_id'], $_SESSION['username']);
-$logger->log('VIEW_LOGS', 'Admin accessed logs page', 'success');
 
 $filter_action = isset($_GET['action']) ? $_GET['action'] : null;
 $logs = $logger->getLogs(200, $filter_action);
@@ -24,11 +23,12 @@ $actions_list = array('LOGIN', 'LOGOUT', 'CAROUSEL_UPDATE', 'RACE_DATE_UPDATE', 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Logs - ASK Hořovice</title>
-    <link rel="stylesheet" href="/front/css/backLogsStyle.css">
-    <link rel="stylesheet" href="../front/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../front/css/backLogsStyle.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     
 </head>
-<body>
+<body class="bg-dark">
 
 <nav class="navbar navbar-dark fixed-top display-flex justify-content-between p-3" >
     <div class="container-fluid">
@@ -37,10 +37,10 @@ $actions_list = array('LOGIN', 'LOGOUT', 'CAROUSEL_UPDATE', 'RACE_DATE_UPDATE', 
     </div>
 </nav>
 
-<div class="container mt-5">
+<div class="container mt-5 text-white">
     <h2 class="mb-4">Admin Activity Logs</h2>
 
-    <div class="filter-section ">
+    <div class="filter-section text-white">
         <h5>Filtrovat podle akce:</h5>
         <div class="btn-group mb-3 " role="group">
             <a href="?action=" class="btn btn-outline-light prettier <?php echo $filter_action === null ? 'active' : ''; ?>">Vše</a>
@@ -108,13 +108,13 @@ $actions_list = array('LOGIN', 'LOGOUT', 'CAROUSEL_UPDATE', 'RACE_DATE_UPDATE', 
             </table>
         </div>
 
-        <div class="mt-4">
+        <div class="mt-4 text-white">
             <p class="text-muted">Zobrazeno <?php echo count($logs); ?> logů. Nejnovější logy jsou nahoře.</p>
         </div>
     <?php endif; ?>
 </div>
 
-<script src="../front/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

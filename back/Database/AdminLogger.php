@@ -25,9 +25,11 @@ class AdminLogger {
             return false;
         }
 
+        $user_id = $this->user_id ?? null;
+
         $stmt->bind_param(
             'isssssss',
-            $this->user_id,
+            $user_id,
             $this->username,
             $action,
             $action_details,
