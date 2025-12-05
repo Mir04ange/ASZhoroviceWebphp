@@ -17,7 +17,7 @@
 .carousel-control-prev,
 .carousel-control-next {
     width: 5%;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     opacity: 0.9;
     position: absolute;
