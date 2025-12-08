@@ -17,6 +17,9 @@ session_start();
 }
 .texts:hover{
   text-decoration: underline;
+transition: 1s;
+background-color: rgba(50, 199, 0, 1);
+
 }
   </style>
     <meta charset="UTF-8">
@@ -96,31 +99,28 @@ session_start();
 
     <section class="onas-section">
       <h2 class="onas-subtitle"></h2>
-      <p class="onas-text autoShow  ">
-              Pokyny pro pořadatele Rallye Hořovice o pohár města Hořovic si můžete stáhnout zde:
-    </p> and
+    
       <a class="texts" href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
     </section>
 
     <section class="onas-section">
-                <p>              Skoleni Poradatele Rallye Horovice.pdf
-</p>
+    
     <a class="texts" href="/PDF/Skoleni_Poradatele_Rallye_Horovice.pdf" download>Skoleni Poradatele Rallye Horovice.pdf</a>
   </section>
 
     <section class="onas-section">
-      <p>Stojici RZ</p>
+      
       <a class="texts" href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 
     <section class="onas-section">
-      <p>Stojici RZ</p>
+      
       <a class="texts" href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 </div>
   </div>
 
-<footer class="footer">
+<footer class="footer container-fluid">
   <div class="footer-content">
     <p>Stránku vytvořili <strong>Miroslav Blecha</strong> a <strong>Dan Čejka</strong></p>
     <p>&copy; 2025 Auto sport klub Hořovice – Všechna práva vyhrazena</p>
