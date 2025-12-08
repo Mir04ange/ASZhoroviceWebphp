@@ -14,7 +14,6 @@ session_start();
   color: black;
   text-decoration: none;
   transition: 1s;
-  margin-bottom: 30px;
 }
 .texts:hover{
   text-decoration: underline;
@@ -101,22 +100,22 @@ background-color: rgba(50, 199, 0, 1);
     <section class="onas-section">
       <h2 class="onas-subtitle"></h2>
     
-      <a class="texts" href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
+      <a class="texts mt-3" href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
     </section>
 
     <section class="onas-section">
     
-    <a class="texts" href="/PDF/Skoleni_Poradatele_Rallye_Horovice.pdf" download>Skoleni Poradatele Rallye Horovice.pdf</a>
+    <a class="texts mt-3" href="/PDF/Skoleni_Poradatele_Rallye_Horovice.pdf" download>Skoleni Poradatele Rallye Horovice.pdf</a>
   </section>
 
     <section class="onas-section">
       
-      <a class="texts" href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
+      <a class="texts mt-3" href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 
     <section class="onas-section">
       
-      <a class="texts" href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
+      <a class="texts mt-3" href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 </div>
   </div>
