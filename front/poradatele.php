@@ -76,8 +76,7 @@ session_start();
     </div>
 </nav>
 
-<div style="position: absolute; top: 20vh;">
-<div class="container" id="textx">
+<div class="container" id="textx" style="position: absolute; top: 20vh;">
   <div class="center-text">
       <div class="onas-wrapper">
     <h1 class="onas-title">PDF ke stažení</h1>
@@ -99,7 +98,6 @@ session_start();
     </section>
 
 
-</div>
 <footer class="footer">
   <div class="footer-content">
     <p>Stránku vytvořili <strong>Miroslav Blecha</strong> a <strong>Dan Čejka</strong></p>
