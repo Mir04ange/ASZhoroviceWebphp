@@ -6,7 +6,11 @@ session_start();
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <style>
+  <style>´
+  section{
+      margin-top: 30px;
+
+  }
 .texts{
   border: 1px solid black;
   padding: 10px;
@@ -14,7 +18,6 @@ session_start();
   color: black;
   text-decoration: none;
   transition: 1s;
-  margin-top: 30px;
 }
 .texts:hover{
   text-decoration: underline;
