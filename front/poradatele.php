@@ -14,6 +14,7 @@ session_start();
   color: black;
   text-decoration: none;
   transition: 1s;
+  margin-bottom: 30px;
 }
 .texts:hover{
   text-decoration: underline;
@@ -92,7 +93,7 @@ background-color: rgba(50, 199, 0, 1);
     </div>
 </nav>
 
-<div class="container" id="textx" style=" margin-top: 50%;">
+<div class="container" id="textx" style=" margin-top: 25%;">
   <div class="center-text">
       <div class="onas-wrapper">
     <h1 class="onas-title">PDF ke stažení</h1>
