@@ -1,48 +1,86 @@
 <?php
 session_start();
-?>
+// -------- DOWNLOAD LOGIC --------
+if (isset($_GET['file']) && $_SESSION['role']) {
+    $filename = $_GET['file'];
+    $filepath = __DIR__ . "/pdfs/" . $filename;
 
+    // small security check
+    if (!preg_match('/^[a-zA-Z0-9_\-\.]+\.docx$/', $filename)) {
+        die("Invalid filename.");
+    }
+
+    if (!file_exists($filepath)) {
+        die("File not found.");
+    }
+
+    header("Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+    header("Content-Disposition: attachment; filename=\"$filename\"");
+    header("Content-Length: " . filesize($filepath));
+    readfile($filepath);
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <style>
-  .secstion{
-      margin-top: 60px;
 
-  }
-.texts{
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 5px;
-  color: black;
-  text-decoration: none;
-  transition: 1s;
-}
-.texts:hover{
-  text-decoration: underline;
-transition: 1s;
-background-color: rgba(50, 199, 0, 1);
-
-}
-  </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASK Hořovice</title>
-    <script src="\front\js\cursor.js"></script>
-    <link rel="stylesheet" href="/front/css/btn.css">
+      <script src="\front\js\cursor.js"></script>
+    <link rel="stylesheet" href="./css/btn.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/Carousel.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="/front/scss/footer.scss">
-    <link rel="stylesheet" href="/front/css/mujtext.css">
-    <link rel="stylesheet" href="/front/css/navbars.css">
+    <link rel="stylesheet" href="./scss/footer.scss">
+    <link rel="stylesheet" href="./css/mujtext.css">
+    <link rel="stylesheet" href="./css/navbars.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        window.addEventListener("scroll", function() {
-            const nav = document.querySelector(".navbar");
-            nav.classList.toggle("scrolled", window.scrollY > 50);
-        });
-    </script>
+    <meta charset="UTF-8">
+    <title>PDF Ke Stažení</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 800px;
+            margin: 60px auto;
+        }
+
+        .content-box {
+            background: rgba(28, 28, 28, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .pdf-list a {
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            background: #1f1f1f;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .pdf-list a:hover {
+            background: #2e2e2e;
+            transform: translateY(-1px);
+        }
+    </style>
 </head>
 <body>
 
@@ -70,7 +108,7 @@ background-color: rgba(50, 199, 0, 1);
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#textx">Fotky</a></li>
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#kontakt">Kontakt</a></li>
                 <?php if(isset($_SESSION['role'])): ?>
-                    <li class="nav-item active-element"><a class="nav-link text-white" href="#">Pro pořadetele</a></li>
+                    <li class="nav-item active-element"><a class="nav-link text-white" href="./poradatele.php">Pro pořadetele</a></li>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
                     <li class="nav-item active-element"><a class="nav-link text-white" href="../back/view_logs.php">Logy</a></li>
@@ -96,34 +134,40 @@ background-color: rgba(50, 199, 0, 1);
     </div>
 </nav>
 
-<div class="container" id="textx secstion" >
-  <div class="center-text">
-      <div class="onas-wrapper">
-    <h1 class="onas-title" style="margin-top: 70px;">PDF ke stažení</h1>
+<div class="container">
+    <div class="content-box">
+        <h2>PDF Ke Stažení</h2>
+        <p style="text-align:center;">Vyberte soubor k stažení.</p>
 
-    <section class="onas-section secstion">
-    
-      <a class="texts " href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
-    </section>
+        <div class="pdf-list">
+            <?php
+            // list pdfs
+            $folder = __DIR__ . "/pdfs";
+            if (!is_dir($folder)) {
+                echo "<p>📁 Složka <b>pdfs</b> neexistuje. Vytvoř ji prosím.</p>";
+            } else {
+                $files = array_diff(scandir($folder), ['.', '..']);
+                $hasPdf = false;
 
-    <section class="onas-section secstion">
-    
-    <a class="texts " href="/PDF/Skoleni_Poradatele_Rallye_Horovice.pdf" download>Skoleni Poradatele Rallye Horovice.pdf</a>
-  </section>
+                foreach ($files as $file) {
+                    if (pathinfo($file, PATHINFO_EXTENSION) === "docx") {
+                        echo "<a href='?file=" . urlencode($file) . "'>$file</a>";
+                        $hasPdf = true;
+                    }
+                }
 
-    <section class="onas-section secstion">
-      
-      <a class="texts " href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
-    </section>
+                if (!$hasPdf) {
+                    echo "<p>Žádné Docx soubory nenalezeny.</p>";
+                }
+            }
+            ?>
+        </div>
 
-    <section class="onas-section secstion" 8>
-      
-      <a class="texts " href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
-    </section>
+    </div>
 </div>
-  </div>
 
-<footer class="footer container-fluid">
+
+<footer class="footer container-fluid" style="bottom: 0px; position: absolute;">
   <div class="footer-content">
     <p>Stránku vytvořili <strong>Miroslav Blecha</strong> a <strong>Dan Čejka</strong></p>
     <p>&copy; 2025 Auto sport klub Hořovice – Všechna práva vyhrazena</p>
