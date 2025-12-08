@@ -76,7 +76,7 @@ session_start();
     </div>
 </nav>
 
-<div class="container" id="textx" style="position: absolute; top: 20vh;">
+<div class="container" id="textx" style=" top: 20vh;">
   <div class="center-text">
       <div class="onas-wrapper">
     <h1 class="onas-title">PDF ke stažení</h1>
