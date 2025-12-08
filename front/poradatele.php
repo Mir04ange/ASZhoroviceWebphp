@@ -117,7 +117,7 @@ background-color: rgba(50, 199, 0, 1);
       <a class="texts " href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 
-    <section class="onas-section">
+    <section class="onas-section" style="margin-top: 690px;">
       
       <a class="texts " href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
