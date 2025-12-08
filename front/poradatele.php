@@ -8,7 +8,10 @@ session_start();
 <head>
   <style>
 .texts{
-  color: white;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
   text-decoration: none;
   transition: 1s;
 }
