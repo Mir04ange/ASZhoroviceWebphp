@@ -76,7 +76,7 @@ session_start();
     </div>
 </nav>
 
-<div class="container" id="textx" style=" top: 20vh;">
+<div class="container" id="textx" style=" margin-top: 50%;">
   <div class="center-text">
       <div class="onas-wrapper">
     <h1 class="onas-title">PDF ke stažení</h1>
@@ -85,16 +85,19 @@ session_start();
       <h2 class="onas-subtitle"></h2>
       <p class="onas-text autoShow">
               Pokyny pro pořadatele Rallye Hořovice o pohár města Hořovic si můžete stáhnout zde:
-    </p>
+    </p> and
+      <a href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
     </section>
 
     <section class="onas-section">
                 <p>              Skoleni Poradatele Rallye Horovice.pdf
 </p>
+    <a href="/PDF/Skoleni_Poradatele_Rallye_Horovice.pdf" download>Skoleni Poradatele Rallye Horovice.pdf</a>
   </section>
 
     <section class="onas-section">
       <p>Stojici RZ</p>
+      <a href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 
 
