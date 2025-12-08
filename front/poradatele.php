@@ -2,6 +2,7 @@
 session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -75,64 +76,30 @@ session_start();
         </div>
     </div>
 </nav>
+
+<div style="position: absolute; top: 20vh;">
 <div class="container" id="textx">
   <div class="center-text">
       <div class="onas-wrapper">
     <h1 class="onas-title">PDF ke stažení</h1>
 
     <section class="onas-section">
+      <h2 class="onas-subtitle"></h2>
       <p class="onas-text autoShow">
-        <span class="onas-highlight">Oznameni_do_obci_editovatelne.docx</span>
-      </p>
+              Pokyny pro pořadatele Rallye Hořovice o pohár města Hořovic si můžete stáhnout zde:
+    </p>
     </section>
 
     <section class="onas-section">
-      <h2 class="onas-subtitle">Kdo vlastně jsme?</h2>
-      <p class="onas-text autoShow">
-        Jsme parta nadšenců pod <span class="onas-highlight">Autoklubem ČR</span>. 
-        Hlavní náplní je pořádání automobilových soutěží – od rallye až po orientační jízdy. 
-        Naši členové se nezastaví – jednou stojí na startu, jindy organizují závody 
-        a hlavně – užívají si motorismus naplno.
-      </p>
-    </section>
+                <p>              Skoleni Poradatele Rallye Horovice.pdf
+</p>
+  </section>
 
     <section class="onas-section">
-      <h2 class="onas-subtitle">Co pořádáme?</h2>
-      <p class="onas-text autoShow">Naší vlajkovou lodí je <span class="onas-highlight">Rallye Hořovice o pohár města Hořovic</span>.</p>
-      <ul class="onas-list">
-        <li>Letos už poběží <strong>16. ročník</strong>.</li>
-        <li>Na startu se pravidelně objevuje <strong>více než 120 posádek</strong>.</li>
-        <li>Díky podpoře města, sponzorů a hlavně našich členů má závod prestiž a tradici.</li>
-      </ul>
-      <p class="onas-text autoShow">
-        A kdo za tím vším stojí? 👉 Bez 150 pořadatelů, hasičů, zdravotníků 
-        a dobrovolníků by to prostě nešlo.
-      </p>
+      <p>Stojici RZ</p>
     </section>
 
-    <section class="onas-section">
-      <h2 class="onas-subtitle">A to není všechno!</h2>
-      <ul class="onas-list">
-        <li>🚗 Rodinné soutěže <em>„Výlet za tajným cílem“</em> zakončené večerním posezením.</li>
-        <li>🚌 Každoroční zájezdy na zajímavá místa.</li>
-      </ul>
-    </section>
 
-    <section class="onas-section">
-      <h2 class="onas-subtitle">Chcete se přidat?</h2>
-      <p class="onas-text autoShow">
-        Hledáme nové tváře – nejen řidiče, ale i ty, kdo umí fotit, natáčet, psát, propagovat, 
-        nebo rozumí internetu a technice. 👉 Každý, kdo má rád auta a dobrou partu, 
-        má u nás dveře otevřené!
-      </p>
-    </section>
-
-    <div class="onas-contact" id="kontakt">
-      <p>📌 Více na našem webu: </p>
-      <p>📞 Kontakt: <strong>Jan Vlček – 604 243 278</strong></p>
-    </div>
-  </div>
-  </div>
 </div>
 <footer class="footer">
   <div class="footer-content">
