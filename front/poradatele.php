@@ -99,10 +99,9 @@ background-color: rgba(50, 199, 0, 1);
 <div class="container" id="textx secstion" >
   <div class="center-text">
       <div class="onas-wrapper">
-    <h1 class="onas-title">PDF ke stažení</h1>
+    <h1 class="onas-title" style="margin-top: 70px;">PDF ke stažení</h1>
 
     <section class="onas-section secstion">
-      <h2 class="onas-subtitle"></h2>
     
       <a class="texts " href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
     </section>
@@ -117,7 +116,7 @@ background-color: rgba(50, 199, 0, 1);
       <a class="texts " href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 
-    <section class="onas-section secstion" >
+    <section class="onas-section secstion" 8>
       
       <a class="texts " href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
