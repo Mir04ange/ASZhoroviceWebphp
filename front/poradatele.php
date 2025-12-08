@@ -6,9 +6,9 @@ session_start();
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <style>´
-  section{
-      margin-top: 30px;
+  <style>
+  .secstion{
+      margin-top: 60px;
 
   }
 .texts{
@@ -96,28 +96,28 @@ background-color: rgba(50, 199, 0, 1);
     </div>
 </nav>
 
-<div class="container" id="textx" style=" margin-top: 25%;">
+<div class="container" id="textx secstion" >
   <div class="center-text">
       <div class="onas-wrapper">
     <h1 class="onas-title">PDF ke stažení</h1>
 
-    <section class="onas-section">
+    <section class="onas-section secstion">
       <h2 class="onas-subtitle"></h2>
     
       <a class="texts " href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
     </section>
 
-    <section class="onas-section">
+    <section class="onas-section secstion">
     
     <a class="texts " href="/PDF/Skoleni_Poradatele_Rallye_Horovice.pdf" download>Skoleni Poradatele Rallye Horovice.pdf</a>
   </section>
 
-    <section class="onas-section">
+    <section class="onas-section secstion">
       
       <a class="texts " href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 
-    <section class="onas-section" style="margin-top: 690px;">
+    <section class="onas-section secstion" >
       
       <a class="texts " href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
