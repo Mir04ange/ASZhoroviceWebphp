@@ -6,6 +6,16 @@ session_start();
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+  <style>
+.texts{
+  color: white;
+  text-decoration: none;
+  transition: 1s;
+}
+.texts:hover{
+  text-decoration: underline;
+}
+  </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASK Hořovice</title>
@@ -83,23 +93,29 @@ session_start();
 
     <section class="onas-section">
       <h2 class="onas-subtitle"></h2>
-      <p class="onas-text autoShow">
+      <p class="onas-text autoShow  ">
               Pokyny pro pořadatele Rallye Hořovice o pohár města Hořovic si můžete stáhnout zde:
     </p> and
-      <a href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
+      <a class="texts" href="/PDF/Poradatele_Rallye_Horovice.pdf" download>Pokryny pro poradatele Rallye Horovice.pdf</a>
     </section>
 
     <section class="onas-section">
                 <p>              Skoleni Poradatele Rallye Horovice.pdf
 </p>
-    <a href="/PDF/Skoleni_Poradatele_Rallye_Horovice.pdf" download>Skoleni Poradatele Rallye Horovice.pdf</a>
+    <a class="texts" href="/PDF/Skoleni_Poradatele_Rallye_Horovice.pdf" download>Skoleni Poradatele Rallye Horovice.pdf</a>
   </section>
 
     <section class="onas-section">
       <p>Stojici RZ</p>
-      <a href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
+      <a class="texts" href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
     </section>
 
+    <section class="onas-section">
+      <p>Stojici RZ</p>
+      <a class="texts" href="/PDF/Stojici_RZ.pdf" download>Stojici RZ.pdf</a>
+    </section>
+</div>
+  </div>
 
 <footer class="footer">
   <div class="footer-content">
