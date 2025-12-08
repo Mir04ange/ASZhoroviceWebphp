@@ -68,7 +68,8 @@ if (isset($_GET['file']) && $_SESSION['role']) {
         .pdf-list a {
             display: block;
             padding: 12px 15px;
-            margin-bottom: 8px;
+            margin: 8px;
+            margin-top: 4%;
             background: #1f1f1f;
             color: white;
             border-radius: 10px;
@@ -134,7 +135,7 @@ if (isset($_GET['file']) && $_SESSION['role']) {
     </div>
 </nav>
 
-<div class="container">
+<div class="container" style="margin-top: 10%;">
     <div class="content-box">
         <h2>PDF Ke Stažení</h2>
         <p style="text-align:center;">Vyberte soubor k stažení.</p>
@@ -167,7 +168,7 @@ if (isset($_GET['file']) && $_SESSION['role']) {
 </div>
 
 
-<footer class="footer container-fluid" style="bottom: 0px; position: absolute;">
+<footer class="footer container-fluid">
   <div class="footer-content">
     <p>Stránku vytvořili <strong>Miroslav Blecha</strong> a <strong>Dan Čejka</strong></p>
     <p>&copy; 2025 Auto sport klub Hořovice – Všechna práva vyhrazena</p>
