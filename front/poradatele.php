@@ -127,9 +127,5 @@ background-color: rgba(50, 199, 0, 1);
   </div>
 </footer>
 
-
-
-
-
 </body>
 </html>
