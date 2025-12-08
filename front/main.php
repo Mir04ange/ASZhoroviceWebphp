@@ -70,7 +70,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#textx">Fotky</a></li>
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#kontakt">Kontakt</a></li>
                 <?php if(isset($_SESSION['role'])): ?>
-                    <li class="nav-item active-element"><a class="nav-link text-white" href="#">Pro pořadetele</a></li>
+                    <li class="nav-item active-element"><a class="nav-link text-white" href="./poradatele.php">Pro pořadetele</a></li>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
                     <li class="nav-item active-element"><a class="nav-link text-white" href="../back/view_logs.php">Logy</a></li>

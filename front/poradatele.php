@@ -1,25 +1,5 @@
 <?php
 session_start();
-
-$prihlasky = $_SESSION['prihlasky'] ?? [];
-
-$fallbacks = [
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
-];
-
-$carousel_paths = [];
-if (file_exists("carousel_images.json")) {
-  $json = json_decode(file_get_contents("carousel_images.json"), true);
-  $carousel_paths = (is_array($json) && count($json) > 0) ? $json : $fallbacks;
-} else {
-  $carousel_paths = $fallbacks;
-}
-
-$race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") : "2025-01-01";
 ?>
 
 <!DOCTYPE html>
@@ -98,15 +78,11 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
 <div class="container" id="textx">
   <div class="center-text">
       <div class="onas-wrapper">
-    <h1 class="onas-title">Auto sport klub Hořovice</h1>
+    <h1 class="onas-title">PDF ke stažení</h1>
 
     <section class="onas-section">
-      <h2 class="onas-subtitle">Motoristé, připravte se na start! 🏁</h2>
       <p class="onas-text autoShow">
-        Máte slabost pro auta, závody a pořádný motoristický adrenalin? 
-        Chcete zažít rallye z první řady a podílet se na akcích, kde se točí volanty, 
-        pálí gumy a tleská stovky fanoušků? Pak jste na správné adrese – 
-        <span class="onas-highlight">Auto sport klub Hořovice</span>!
+        <span class="onas-highlight">Oznameni_do_obci_editovatelne.docx</span>
       </p>
     </section>
 
