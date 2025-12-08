@@ -12,7 +12,6 @@ session_start();
     <script src="\front\js\cursor.js"></script>
     <link rel="stylesheet" href="/front/css/btn.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="front/css/Carousel.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="/front/scss/footer.scss">
     <link rel="stylesheet" href="/front/css/mujtext.css">
