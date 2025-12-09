@@ -80,6 +80,7 @@ if (isset($_GET['file']) && $_SESSION['role']) {
         .pdf-list a:hover {
             background: #00bc10ff;
             transform: translateY(-1px);
+            transition: 1s;
         }
     </style>
 </head>
