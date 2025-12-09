@@ -70,8 +70,8 @@ if (isset($_GET['file']) && $_SESSION['role']) {
             padding: 12px 15px;
             margin: 8px;
             margin-top: 4%;
-            background: #1f1f1f;
-            color: white;
+            background: white;
+            color: black;
             border-radius: 10px;
             text-decoration: none;
             transition: 0.2s;
