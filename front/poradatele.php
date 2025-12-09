@@ -43,7 +43,7 @@ if (isset($_GET['file']) && $_SESSION['role']) {
             margin: 0;
             background-color: #121212;
             font-family: Arial, sans-serif;
-            color: white;
+            color: black;
         }
 
         .container {
@@ -53,7 +53,7 @@ if (isset($_GET['file']) && $_SESSION['role']) {
         }
 
         .content-box {
-            background: rgba(28, 28, 28, 0.9);
+            background: white;
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 0 25px rgba(0,0,0,0.4);
@@ -70,7 +70,7 @@ if (isset($_GET['file']) && $_SESSION['role']) {
             padding: 12px 15px;
             margin: 8px;
             margin-top: 4%;
-            background: white;
+            background: rgba(238, 238, 238, 1);
             color: black;
             border-radius: 10px;
             text-decoration: none;
@@ -170,8 +170,8 @@ if (isset($_GET['file']) && $_SESSION['role']) {
 
 
 <footer class="footer container-fluid">
-  <div class="footer-content">
-    <p>Stránku vytvořili <strong>Miroslav Blecha</strong> a <strong>Dan Čejka</strong></p>
+  <div style="color: white;" class="footer-content">
+    <p >Stránku vytvořili <strong>Miroslav Blecha</strong> a <strong>Dan Čejka</strong></p>
     <p>&copy; 2025 Auto sport klub Hořovice – Všechna práva vyhrazena</p>
   </div>
 </footer>
