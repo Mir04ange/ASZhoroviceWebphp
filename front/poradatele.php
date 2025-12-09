@@ -75,6 +75,7 @@ if (isset($_GET['file']) && $_SESSION['role']) {
             border-radius: 10px;
             text-decoration: none;
             transition: 0.2s;
+            text-align: center;
         }
 
         .pdf-list a:hover {
