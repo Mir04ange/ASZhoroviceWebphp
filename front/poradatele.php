@@ -104,7 +104,7 @@ if (isset($_GET['file']) && $_SESSION['role']) {
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav text-center" style="background-color: #1c1c1cff; border-radius: 10px;">
-                <li class="nav-item active-element"><a class="nav-link text-white" href="#">Domů</a></li>
+                <li class="nav-item active-element"><a class="nav-link text-white" href="./main.php">Domů</a></li>
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#">Závody</a></li>
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#textx">O nás</a></li>
                 <li class="nav-item active-element"><a class="nav-link text-white" href="#textx">Fotky</a></li>
