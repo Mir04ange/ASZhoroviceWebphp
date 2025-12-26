@@ -148,7 +148,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
         <button type="submit" class="btn btn-primary">Uložit obrázky</button>
     </form>
 
-  <h5 class="mt-4 autoShow">Upravit datum závodu</h5>
+  <h5 class="mt-4 ">Upravit datum závodu</h5>
   <form action="../back/update_date.php" method="POST">
     <input type="date" name="race_date" class="form-control" value="<?= $race_date ?>" required>
     <button type="submit" class="btn btn-primary mt-2">Uložit datum</button>
@@ -343,10 +343,12 @@ if (strtotime($today) > strtotime($race_date . ' +1 day')) {
 
 
 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-    <form method="POST" action="download_pdf.php">
-        <input type="hidden" name="all" value="1">
-        <button class="btn btn-success mt-2">Stáhnout všechny přihlášky</button>
+  <div class="d-flex justify-content-center mt-2">
+    <form method="POST" action="download_pdf.php" class="text-center">
+      <input type="hidden" name="all" value="1">
+      <button class="btn btn-success">Stáhnout všechny přihlášky</button>
     </form>
+  </div>
 <?php endif; ?>
 
 
