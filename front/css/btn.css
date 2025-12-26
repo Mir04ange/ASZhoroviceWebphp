@@ -1,27 +1,33 @@
- .btn-red {
-        background: linear-gradient(145deg, #cc0000, #ff1a1a);
-        color: #fff;
-        padding: 12px 28px;
-        border: none;
-        border-radius: 16px;
-        font-size: 18px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-left: 50px;
-        text-decoration: none;
-        box-shadow: 0 6px 15px rgba(204, 0, 0, 0.3);
-        animation: pulse 2s infinite;
-    }
+.btn-red {
+    background: linear-gradient(145deg, #cc0000, #ff1a1a);
+    color: #fff;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 50px;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-skip-ink: none;
+    box-shadow: 0 6px 15px rgba(204, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+}
 
-    .btn-red:hover {
-        background: linear-gradient(145deg, #e60000, #ff3333);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(230, 0, 0, 0.5);
-        animation: none;
-    }
+.btn-red:hover {
+    background: linear-gradient(145deg, #e60000, #ff3333);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 0, 0, 0.5);
+    animation: none;
+    /* keep padding same to avoid layout shift */
+    text-decoration: none;
+}
 
-    .btn-red:active {
-        transform: translateY(1px);
-        box-shadow: 0 4px 10px rgba(230, 0, 0, 0.4);
-    }
+.btn-red:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(230, 0, 0, 0.4);
+}
