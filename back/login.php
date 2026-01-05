@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once './Database/db.php';
 require_once './Database/AdminLogger.php';
@@ -9,9 +8,6 @@ $password = $_POST['password'] ?? '';
 
 // Empty input → log + error
 if (empty($username) || empty($password)) {
-    $logger = new AdminLogger($conn, null, $username);
-    $logger->log('LOGIN', 'Empty username or password', 'failed');
-
     $_SESSION['error'] = 'Chyba: uživatelské jméno ani heslo nemůže být prázdné!';
     header('Location: ./../front/Login.php');
     exit;
@@ -48,13 +44,8 @@ if ($row = $result->fetch_assoc()) {
     exit;
 
 } else {
-    // Username doesn’t exist → failed log
-    $logger = new AdminLogger($conn, null, $username);
-    $logger->log('LOGIN', 'User not found', 'failed');
-
     $_SESSION['error'] = 'Chyba: špatné uživatelské jméno nebo heslo!';
     header('Location: ./../front/Login.php');
     exit;
 }
-
 ?>
