@@ -4,19 +4,29 @@ session_start();
 $prihlasky = $_SESSION['prihlasky'] ?? [];
 
 $fallbacks = [
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  "https://tse4.mm.bing.net/th/id/OIP.DSr9J-h2QljIcLKdLZfrLQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+  "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=1200&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1494976388531-d1058494cdd7?w=1200&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=1200&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1494976388531-d1058494cdd7?w=1200&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=1200&h=600&fit=crop"
 ];
 
 $carousel_paths = [];
 if (file_exists("carousel_images.json")) {
   $json = json_decode(file_get_contents("carousel_images.json"), true);
-  $carousel_paths = (is_array($json) && count($json) > 0) ? $json : $fallbacks;
+  if (is_array($json) && count($json) > 0) {
+    // Verify that images are accessible
+    $carousel_paths = $json;
+  } else {
+    $carousel_paths = $fallbacks;
+  }
 } else {
   $carousel_paths = $fallbacks;
+}
+
+// Ensure we have at least 5 images
+if (count($carousel_paths) < 5) {
+  $carousel_paths = array_pad($carousel_paths, 5, $fallbacks[0]);
 }
 
 $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") : "2025-01-01";
@@ -86,13 +96,17 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
         <div class="carousel-inner">
             <?php foreach($carousel_paths as $index => $img): ?>
                 <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-                    <img class="d-block w-100" src="<?php
-                        if (filter_var($img, FILTER_VALIDATE_URL)) {
-                            echo $img;
-                        } else {
-                            echo './uploads/carousel/' . $img;
-                        }
-                    ?>" alt="Obrázek <?= $index+1 ?>">
+                    <img class="d-block w-100" 
+                         src="<?php
+                            if (filter_var($img, FILTER_VALIDATE_URL)) {
+                                echo htmlspecialchars($img);
+                            } else {
+                                echo './uploads/carousel/' . htmlspecialchars($img);
+                            }
+                        ?>" 
+                         alt="Obrázek <?= $index+1 ?>"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=1200&h=600&fit=crop'">
                 </div>
             <?php endforeach; ?>
         </div>
