@@ -161,36 +161,42 @@ a:hover {
 .nav-link {
     color: var(--text-secondary) !important;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1.2rem !important;
     position: relative;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
+    display: inline-block;
+    white-space: nowrap;
 }
 
-.nav-link::after {
+.nav-link::before {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: 50%;
+    bottom: 0;
+    left: 0;
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, var(--primary), var(--primary-light));
-    transform: translateX(-50%);
-    transition: width var(--transition-fast);
+    transition: width var(--transition-base);
 }
 
 .nav-link:hover {
     color: var(--primary) !important;
+    transform: translateY(-2px);
 }
 
-.nav-link:hover::after {
-    width: 80%;
+.nav-link:hover::before {
+    width: 100%;
 }
 
 .nav-link.active {
     color: var(--primary) !important;
+}
+
+.nav-link.active::before {
+    width: 100%;
 }
 
 .navbar-toggler {
@@ -230,6 +236,22 @@ a:hover {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
+@media (min-width: 992px) {
+    .navbar-collapse {
+        justify-content: flex-end;
+    }
+    
+    .navbar-nav {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .nav-item {
+        display: inline-block;
+    }
+}
+
 /* ============================================
    HERO SECTION - CAROUSEL
    ============================================ */
@@ -256,7 +278,8 @@ a:hover {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.5) contrast(1.1);
-    transition: filter var(--transition-slow);
+    transition: filter var(--transition-slow), transform var(--transition-slow);
+    animation: zoomIn 0.6s ease-out;
 }
 
 .carousel-item.active img {
@@ -265,6 +288,18 @@ a:hover {
 
 .carousel-item:hover img {
     filter: brightness(0.65) contrast(1.15);
+    transform: scale(1.02);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .carousel-control-prev,
@@ -281,8 +316,14 @@ a:hover {
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background: rgba(230, 57, 70, 0.4);
+    background: rgba(230, 57, 70, 0.5);
     border-color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev:active,
+.carousel-control-next:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 .carousel-control-prev {

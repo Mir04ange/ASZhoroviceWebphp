@@ -54,7 +54,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-center" style="gap: 0.5rem;">
                 <li class="nav-item"><a class="nav-link" href="#home">Domů</a></li>
                 <li class="nav-item"><a class="nav-link" href="#zavody">Závody</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">O nás</a></li>
@@ -66,14 +66,14 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
                     <li class="nav-item"><a class="nav-link" href="../back/view_logs.php">Logy</a></li>
                 <?php endif; ?>
+                <li class="nav-item" style="margin-left: 1rem;">
+                    <?php if(!isset($_SESSION['username'])): ?>
+                        <a href="./Login.php" class="btn-secondary-custom" style="display: inline-block;">Přihlášení</a>
+                    <?php else: ?>
+                        <a href="../back/logout.php" class="btn-secondary-custom" style="display: inline-block;">Odhlásit se</a>
+                    <?php endif; ?>
+                </li>
             </ul>
-            <div class="ms-3 mt-2 mt-lg-0">
-                <?php if(!isset($_SESSION['username'])): ?>
-                    <a href="./Login.php" class="btn-secondary-custom">Přihlášení</a>
-                <?php else: ?>
-                    <a href="../back/logout.php" class="btn-secondary-custom">Odhlásit se</a>
-                <?php endif; ?>
-            </div>
         </div>
     </div>
 </nav>
@@ -82,7 +82,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
      HERO SECTION - CAROUSEL
      ============================================ -->
 <div class="carousel-container" id="home">
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
             <?php foreach($carousel_paths as $index => $img): ?>
                 <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
@@ -384,6 +384,20 @@ try {
                 link.classList.add('active');
             }
         });
+    // Carousel animation enhancement
+    const carousel = document.getElementById("heroCarousel");
+    if (carousel) {
+        carousel.addEventListener("slide.bs.carousel", function(e) {
+            const items = document.querySelectorAll(".carousel-item img");
+            items.forEach(img => {
+                img.style.animation = "none";
+                setTimeout(() => {
+                    img.style.animation = "zoomIn 0.6s ease-out";
+                }, 10);
+            });
+        });
+    }
+
     });
 </script>
 

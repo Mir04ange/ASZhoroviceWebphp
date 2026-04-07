@@ -31,6 +31,12 @@
             padding: 3rem;
             box-shadow: var(--shadow-xl);
             animation: fadeInUp 0.6s ease-out;
+            transition: all var(--transition-base);
+        }
+        
+        .login-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-xl), var(--shadow-glow);
         }
 
         .login-header {
@@ -100,6 +106,16 @@
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
             outline: none;
+            animation: focusPulse 0.3s ease-out;
+        }
+        
+        @keyframes focusPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+            }
         }
 
         .btn-login {
@@ -142,6 +158,21 @@
 
         .btn-login:active {
             transform: translateY(-1px);
+        }
+        
+        .btn-login {
+            animation: slideInUp 0.5s ease-out 0.3s both;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .back-link {
