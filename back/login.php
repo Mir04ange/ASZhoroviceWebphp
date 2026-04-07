@@ -7,7 +7,7 @@ $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
 // Check if database is available
-if (!isDatabaseAvailable()) {
+if (!isDatabaseAvailable() || !$conn) {
     $_SESSION['error'] = 'Chyba: Databáze není dostupná. Prosím kontaktujte administrátora.';
     header('Location: ./../front/Login.php');
     exit;
