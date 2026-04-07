@@ -167,8 +167,12 @@ $info_text = file_exists("info_text.txt") ? file_get_contents("info_text.txt") :
 
             <div class="col-12">
                 <div class="card-premium">
-                    <h4 class="text-primary mb-3">Upravit informační text</h4>
-                    <form action="../back/update_info.php" method="POST">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 class="text-primary mb-0">Upravit informační text</h4>
+                        <button type="button" class="btn-secondary-custom" onclick="toggleInfoEdit()">Editovat</button>
+                    </div>
+                    
+                    <form action="../back/update_info.php" method="POST" id="infoEditForm" style="display: none;">
                         <div class="form-group">
                             <label class="form-label">Informační text (HTML povoleno)</label>
                             <textarea name="info_text" class="form-control" rows="6" required><?php 
@@ -177,7 +181,10 @@ $info_text = file_exists("info_text.txt") ? file_get_contents("info_text.txt") :
                                 }
                             ?></textarea>
                         </div>
-                        <button type="submit" class="btn-primary-custom w-100">Uložit text</button>
+                        <div style="display: flex; gap: 1rem;">
+                            <button type="submit" class="btn-primary-custom" style="flex: 1;">Uložit text</button>
+                            <button type="button" class="btn-secondary-custom" style="flex: 1;" onclick="toggleInfoEdit()">Zrušit</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -434,6 +441,20 @@ try {
 </footer>
 
 <script>
+    // Toggle info text editing form
+    function toggleInfoEdit() {
+        const form = document.getElementById('infoEditForm');
+        if (form) {
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                // Focus on textarea
+                form.querySelector('textarea').focus();
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    }
+
     // Smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

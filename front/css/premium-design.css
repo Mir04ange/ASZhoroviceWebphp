@@ -524,6 +524,27 @@ a:hover {
 textarea.form-control {
     resize: vertical;
     min-height: 120px;
+    color: var(--text-primary) !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+/* Info Edit Form */
+#infoEditForm {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
 }
 
 .form-check {
