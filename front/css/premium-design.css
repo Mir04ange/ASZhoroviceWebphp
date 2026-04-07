@@ -146,6 +146,13 @@ a:hover {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
+    color: var(--text-primary) !important;
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.navbar-brand:hover {
+    color: var(--primary) !important;
 }
 
 .navbar-brand img {
