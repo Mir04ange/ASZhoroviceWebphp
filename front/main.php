@@ -30,6 +30,9 @@ if (count($carousel_paths) < 5) {
 }
 
 $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") : "2025-01-01";
+
+// Load info text
+$info_text = file_exists("info_text.txt") ? file_get_contents("info_text.txt") : null;
 ?>
 
 <!DOCTYPE html>
@@ -163,6 +166,23 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
                     </form>
                 </div>
             </div>
+
+            <div class="col-12">
+                <div class="card-premium">
+                    <h4 class="text-primary mb-3">Upravit informační text</h4>
+                    <form action="../back/update_info.php" method="POST">
+                        <div class="form-group">
+                            <label class="form-label">Informační text (HTML povoleno)</label>
+                            <textarea name="info_text" class="form-control" rows="6" required><?php 
+                                if ($info_text) {
+                                    echo htmlspecialchars($info_text);
+                                }
+                            ?></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary-custom w-100">Uložit text</button>
+                    </form>
+                </div>
+            </div>
         </div>
 
         <?php if(isset($_SESSION['error'])): ?>
@@ -202,52 +222,60 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
             <h2>O nás</h2>
         </div>
 
-        <div class="about-section">
-            <h3 class="about-title">Auto sport klub Hořovice</h3>
+        <?php if ($info_text): ?>
+            <!-- Custom info text -->
+            <div class="about-section">
+                <?= $info_text ?>
+            </div>
+        <?php else: ?>
+            <!-- Default info text -->
+            <div class="about-section">
+                <h3 class="about-title">Auto sport klub Hořovice</h3>
 
-            <div class="about-subtitle">Motoristé, připravte se na start! 🏁</div>
-            <p class="about-text">
-                Máte slabost pro auta, závody a pořádný motoristický adrenalin? 
-                Chcete zažít rallye z první řady a podílet se na akcích, kde se točí volanty, 
-                pálí gumy a tleská stovky fanoušků? Pak jste na správné adrese – 
-                <span class="about-highlight">Auto sport klub Hořovice</span>!
-            </p>
+                <div class="about-subtitle">Motoristé, připravte se na start! 🏁</div>
+                <p class="about-text">
+                    Máte slabost pro auta, závody a pořádný motoristický adrenalin? 
+                    Chcete zažít rallye z první řady a podílet se na akcích, kde se točí volanty, 
+                    pálí gumy a tleská stovky fanoušků? Pak jste na správné adrese – 
+                    <span class="about-highlight">Auto sport klub Hořovice</span>!
+                </p>
 
-            <div class="about-subtitle">Kdo vlastně jsme?</div>
-            <p class="about-text">
-                Jsme parta nadšenců pod <span class="about-highlight">Autoklubem ČR</span>. 
-                Hlavní náplní je pořádání automobilových soutěží – od rallye až po orientační jízdy. 
-                Naši členové se nezastaví – jednou stojí na startu, jindy organizují závody 
-                a hlavně – užívají si motorismus naplno.
-            </p>
+                <div class="about-subtitle">Kdo vlastně jsme?</div>
+                <p class="about-text">
+                    Jsme parta nadšenců pod <span class="about-highlight">Autoklubem ČR</span>. 
+                    Hlavní náplní je pořádání automobilových soutěží – od rallye až po orientační jízdy. 
+                    Naši členové se nezastaví – jednou stojí na startu, jindy organizují závody 
+                    a hlavně – užívají si motorismus naplno.
+                </p>
 
-            <div class="about-subtitle">Co pořádáme?</div>
-            <p class="about-text">
-                Naší vlajkovou lodí je <span class="about-highlight">Rallye Hořovice o pohár města Hořovic</span>.
-            </p>
-            <ul class="about-list">
-                <li>Letos už poběží <strong>16. ročník</strong>.</li>
-                <li>Na startu se pravidelně objevuje <strong>více než 120 posádek</strong>.</li>
-                <li>Díky podpoře města, sponzorů a hlavně našich členů má závod prestiž a tradici.</li>
-            </ul>
-            <p class="about-text">
-                A kdo za tím vším stojí? 👉 Bez 150 pořadatelů, hasičů, zdravotníků 
-                a dobrovolníků by to prostě nešlo.
-            </p>
+                <div class="about-subtitle">Co pořádáme?</div>
+                <p class="about-text">
+                    Naší vlajkovou lodí je <span class="about-highlight">Rallye Hořovice o pohár města Hořovic</span>.
+                </p>
+                <ul class="about-list">
+                    <li>Letos už poběží <strong>16. ročník</strong>.</li>
+                    <li>Na startu se pravidelně objevuje <strong>více než 120 posádek</strong>.</li>
+                    <li>Díky podpoře města, sponzorů a hlavně našich členů má závod prestiž a tradici.</li>
+                </ul>
+                <p class="about-text">
+                    A kdo za tím vším stojí? 👉 Bez 150 pořadatelů, hasičů, zdravotníků 
+                    a dobrovolníků by to prostě nešlo.
+                </p>
 
-            <div class="about-subtitle">A to není všechno!</div>
-            <ul class="about-list">
-                <li>🚗 Rodinné soutěže <em>"Výlet za tajným cílem"</em> zakončené večerním posezením.</li>
-                <li>🚌 Každoroční zájezdy na zajímavá místa.</li>
-            </ul>
+                <div class="about-subtitle">A to není všechno!</div>
+                <ul class="about-list">
+                    <li>🚗 Rodinné soutěže <em>"Výlet za tajným cílem"</em> zakončené večerním posezením.</li>
+                    <li>🚌 Každoroční zájezdy na zajímavá místa.</li>
+                </ul>
 
-            <div class="about-subtitle">Chcete se přidat?</div>
-            <p class="about-text">
-                Hledáme nové tváře – nejen řidiče, ale i ty, kdo umí fotit, natáčet, psát, propagovat, 
-                nebo rozumí internetu a technice. 👉 Každý, kdo má rád auta a dobrou partu, 
-                má u nás dveře otevřené!
-            </p>
-        </div>
+                <div class="about-subtitle">Chcete se přidat?</div>
+                <p class="about-text">
+                    Hledáme nové tváře – nejen řidiče, ale i ty, kdo umí fotit, natáčet, psát, propagovat, 
+                    nebo rozumí internetu a technice. 👉 Každý, kdo má rád auta a dobrou partu, 
+                    má u nás dveře otevřené!
+                </p>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 
@@ -266,7 +294,7 @@ try {
             throw new Exception("Chyba připojení k DB: " . $conn->connect_error);
         }
 
-        $sql = "SELECT * FROM prihlasky ORDER BY datum_prihlaseni DESC LIMIT 10";
+        $sql = "SELECT * FROM prihlasky ORDER BY datum_prihlaseni DESC";
         $result = $conn->query($sql);
 
         if (!$result) {
@@ -289,7 +317,7 @@ try {
 <div class="section-container" id="zavody">
     <div class="content-wrapper">
         <div class="section-title">
-            <h2>Poslední přihlášky</h2>
+            <h2>Přihlášky</h2>
         </div>
 
         <?php if ($db_error): ?>
@@ -304,27 +332,69 @@ try {
             </div>
         <?php else: ?>
             <div class="table-wrapper">
-                <table class="table">
+                <table class="registrations-table">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Team</th>
                             <th>Řidič</th>
+                            <th>Spolujezdec</th>
                             <th>Vozidlo</th>
-                            <th>Datum přihlášky</th>
+                            <th>Datum závodu</th>
+                            <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                                <th>Datum přihlášení</th>
+                                <th>Zaplaceno</th>
+                                <th>Akce</th>
+                            <?php endif; ?>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($registrace as $reg): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($reg['team'] ?? 'N/A') ?></td>
-                                <td><?= htmlspecialchars($reg['ridic_jmeno'] ?? 'N/A') ?></td>
-                                <td><?= htmlspecialchars(($reg['auto_znacka'] ?? '') . ' ' . ($reg['auto_typ'] ?? '')) ?></td>
-                                <td><?= htmlspecialchars($reg['datum_prihlaseni'] ?? 'N/A') ?></td>
-                            </tr>
-                        <?php endforeach; ?>
+                        <?php
+                        $today = date("Y-m-d");
+                        if (strtotime($today) > strtotime($race_date . ' +1 day')) {
+                            // Den po závodě – smažeme všechny přihlášky
+                            @include './../back/Database/db.php';
+                            if (isset($conn) && $conn) {
+                                $conn->query("DELETE FROM prihlasky");
+                                $conn->close();
+                                echo '<tr><td colspan="' . (isset($_SESSION['role']) && $_SESSION['role'] === 'admin' ? '9' : '6') . '" class="text-center" style="color: var(--warning); padding: 2rem;">Závod skončil, přihlášky byly smazány.</td></tr>';
+                            }
+                        } else {
+                            foreach ($registrace as $index => $data): ?>
+                                <tr>
+                                    <td><?= $index + 1 ?></td>
+                                    <td><?= htmlspecialchars($data['team'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars($data['ridic_jmeno'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars($data['spoluj_jmeno'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars(($data['auto_znacka'] ?? '-') . ' / ' . ($data['auto_typ'] ?? '')) ?></td>
+                                    <td><?= htmlspecialchars($data['datum_zavodu'] ?? '-') ?></td>
+
+                                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                                        <td><?= htmlspecialchars($data['datum_prihlaseni'] ?? '-') ?></td>
+                                        <td><?= $data['zaplaceno'] ? '✓ Ano' : '✗ Ne' ?></td>
+                                        <td>
+                                            <form method="POST" action="../back/delete_prihlaska.php" onsubmit="return confirm('Opravdu chcete tuto přihlášku smazat?');" style="display: inline;">
+                                                <input type="hidden" name="id_prihlaska" value="<?= htmlspecialchars($data['id_prihlaska']) ?>">
+                                                <button type="submit" class="btn-delete-small">Smazat</button>
+                                            </form>
+                                        </td>
+                                    <?php endif; ?>
+                                </tr>
+                            <?php endforeach;
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
+
+            <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                <div style="display: flex; justify-content: center; margin-top: 2rem; gap: 1rem;">
+                    <form method="POST" action="download_pdf.php" style="display: inline;">
+                        <input type="hidden" name="all" value="1">
+                        <button type="submit" class="btn-primary-custom">Stáhnout všechny přihlášky</button>
+                    </form>
+                </div>
+            <?php endif; ?>
         <?php endif; ?>
     </div>
 </div>

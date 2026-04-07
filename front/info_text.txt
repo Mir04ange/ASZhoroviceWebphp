@@ -1,0 +1,44 @@
+<h3 class="about-title">Auto sport klub Hořovice</h3>
+
+<div class="about-subtitle">Motoristé, připravte se na start! 🏁</div>
+<p class="about-text">
+    Máte slabost pro auta, závody a pořádný motoristický adrenalin? 
+    Chcete zažít rallye z první řady a podílet se na akcích, kde se točí volanty, 
+    pálí gumy a tleská stovky fanoušků? Pak jste na správné adrese – 
+    <span class="about-highlight">Auto sport klub Hořovice</span>!
+</p>
+
+<div class="about-subtitle">Kdo vlastně jsme?</div>
+<p class="about-text">
+    Jsme parta nadšenců pod <span class="about-highlight">Autoklubem ČR</span>. 
+    Hlavní náplní je pořádání automobilových soutěží – od rallye až po orientační jízdy. 
+    Naši členové se nezastaví – jednou stojí na startu, jindy organizují závody 
+    a hlavně – užívají si motorismus naplno.
+</p>
+
+<div class="about-subtitle">Co pořádáme?</div>
+<p class="about-text">
+    Naší vlajkovou lodí je <span class="about-highlight">Rallye Hořovice o pohár města Hořovic</span>.
+</p>
+<ul class="about-list">
+    <li>Letos už poběží <strong>16. ročník</strong>.</li>
+    <li>Na startu se pravidelně objevuje <strong>více než 120 posádek</strong>.</li>
+    <li>Díky podpoře města, sponzorů a hlavně našich členů má závod prestiž a tradici.</li>
+</ul>
+<p class="about-text">
+    A kdo za tím vším stojí? 👉 Bez 150 pořadatelů, hasičů, zdravotníků 
+    a dobrovolníků by to prostě nešlo.
+</p>
+
+<div class="about-subtitle">A to není všechno!</div>
+<ul class="about-list">
+    <li>🚗 Rodinné soutěže <em>"Výlet za tajným cílem"</em> zakončené večerním posezením.</li>
+    <li>🚌 Každoroční zájezdy na zajímavá místa.</li>
+</ul>
+
+<div class="about-subtitle">Chcete se přidat?</div>
+<p class="about-text">
+    Hledáme nové tváře – nejen řidiče, ale i ty, kdo umí fotit, natáčet, psát, propagovat, 
+    nebo rozumí internetu a technice. 👉 Každý, kdo má rád auta a dobrou partu, 
+    má u nás dveře otevřené!
+</p>
