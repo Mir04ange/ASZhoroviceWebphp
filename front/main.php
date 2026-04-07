@@ -55,8 +55,8 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
             <span>ASK Hořovice</span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="toggler-icon">
+        <button  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            
                 <span></span>
                 <span></span>
                 <span></span>
