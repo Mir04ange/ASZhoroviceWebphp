@@ -32,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- důležité pro mobily -->
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/prihlaska.css">
+    <link rel="stylesheet" href="./css/modern-redesign.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="container py-5">
@@ -44,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
   <?php endif; ?>
 
-  <form method="POST" action="./../back/Database/prihlaskaUploadToDB.php" class="shadow-lg p-4 rounded">
+  <form method="POST" action="./../back/Database/prihlaskaUploadToDB.php" class="p-4">
 
     <!-- TEAM -->
     <div class="form-section">
@@ -116,10 +118,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       </div>
     </div>
 
-    <button type="submit" class="btn btn-custom w-100">Odeslat přihlášku</button>
+    <button type="submit" class="btn-red w-100 border-0 mb-3">Odeslat přihlášku</button>
   
   </form>
-  <a href="./main.php"><button class="btn btn-customs w-100">Zpátky</button></a>
+  <div class="text-center mt-3">
+    <a href="./main.php" class="btn-black text-decoration-none">Zpátky na hlavní stránku</a>
+  </div>
 </div>
 
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

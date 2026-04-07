@@ -33,9 +33,11 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/Carousel.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modern-redesign.css">
     <link rel="stylesheet" href="./scss/footer.scss">
     <link rel="stylesheet" href="./css/mujtext.css">
     <link rel="stylesheet" href="./css/navbars.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         window.addEventListener("scroll", function() {
@@ -47,7 +49,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top p-3" style="background-color:#1c1c1cff;">
+<nav class="navbar navbar-expand-lg fixed-top p-3">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="#">
             <img src="\SVGLOGA\sadasdsd.svg" alt="AZK" style="height: 50px;">
@@ -97,7 +99,7 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
 </nav>
 
 <!-- Carousel -->
-<div class="container-fluid px-0 mt-5 pt-5">
+<div class="container-fluid px-0">
   <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
     <div class="carousel-inner">
@@ -166,9 +168,9 @@ $race_date = file_exists("race_date.txt") ? file_get_contents("race_date.txt") :
 <?php endif; ?>
 
 <!-- Přihlášení do závodu + datum -->
-<div class="buttons mt-5">
-  <span class="btn-black">Datum závodu: <?= $race_date ?></span>
-  <a href="./prihlaska.php" class="btn-red">Přihlásit se do závodu</a>
+<div class="buttons mt-5" style="display: flex; gap: 20px; justify-content: center; margin-top: 50px;">
+  <span class="btn-black shadow-lg">Datum závodu: <?= $race_date ?></span>
+  <a href="./prihlaska.php" class="btn-red shadow-lg">Přihlásit se do závodu</a>
 </div>
 
 <!-- Textové pole -->
