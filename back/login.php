@@ -6,6 +6,13 @@ require_once './Database/AdminLogger.php';
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
+// Check if database is available
+if (!isDatabaseAvailable()) {
+    $_SESSION['error'] = 'Chyba: Databáze není dostupná. Prosím kontaktujte administrátora.';
+    header('Location: ./../front/Login.php');
+    exit;
+}
+
 // Empty input → log + error
 if (empty($username) || empty($password)) {
     $_SESSION['error'] = 'Chyba: uživatelské jméno ani heslo nemůže být prázdné!';

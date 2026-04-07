@@ -12,6 +12,12 @@ class AdminLogger {
     }
 
     public function log($action, $action_details = '', $status = 'success', $error_message = '') {
+        // Check if connection is available
+        if (!$this->conn || !($this->conn instanceof mysqli)) {
+            error_log("Logger: Database not available. Action: $action");
+            return false;
+        }
+
         $ip_address = $this->getClientIP();
         $user_agent = substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 500);
 
@@ -57,6 +63,11 @@ class AdminLogger {
     }
 
     public function getLogs($limit = 100, $action = null) {
+        // Check if connection is available
+        if (!$this->conn || !($this->conn instanceof mysqli)) {
+            return array();
+        }
+
         $sql = 'SELECT * FROM admin_logs WHERE 1=1';
         $params = array();
         $types = '';
@@ -94,6 +105,11 @@ class AdminLogger {
     }
 
     public function getUserLogs($user_id, $limit = 50) {
+        // Check if connection is available
+        if (!$this->conn || !($this->conn instanceof mysqli)) {
+            return array();
+        }
+
         $stmt = $this->conn->prepare(
             'SELECT * FROM admin_logs WHERE user_id = ? ORDER BY timestamp DESC LIMIT ?'
         );
