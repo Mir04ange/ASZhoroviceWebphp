@@ -199,6 +199,18 @@ a:hover {
     width: 100%;
 }
 
+/* Navbar Auth Button */
+.nav-auth-item {
+    margin-left: 1rem !important;
+    white-space: nowrap;
+}
+
+.nav-btn {
+    display: inline-block !important;
+    padding: 10px 20px !important;
+    white-space: nowrap;
+}
+
 .navbar-toggler {
     border: none !important;
     padding: 0.25rem !important;
@@ -755,6 +767,38 @@ textarea.form-control {
 
 .btn-delete-small:active {
     transform: translateY(0);
+}
+
+/* Zaplaceno Toggle Button */
+.btn-zaplaceno-toggle {
+    background: transparent;
+    border: 2px solid var(--border-medium);
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-zaplaceno-toggle:hover {
+    border-color: var(--primary);
+    background: rgba(230, 57, 70, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-zaplaceno-toggle span.paid {
+    color: var(--success);
+    font-weight: 700;
+}
+
+.btn-zaplaceno-toggle span.unpaid {
+    color: var(--danger);
+    font-weight: 700;
 }
 
 /* ============================================

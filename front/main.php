@@ -58,12 +58,10 @@ $info_text = file_exists("info_text.txt") ? file_get_contents("info_text.txt") :
             <span>ASK Hořovice</span>
         </a>
 
-        <button  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -79,11 +77,11 @@ $info_text = file_exists("info_text.txt") ? file_get_contents("info_text.txt") :
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
                     <li class="nav-item"><a class="nav-link" href="../back/view_logs.php">Logy</a></li>
                 <?php endif; ?>
-                <li class="nav-item" style="margin-left: 1rem;">
+                <li class="nav-item nav-auth-item">
                     <?php if(!isset($_SESSION['username'])): ?>
-                        <a href="./Login.php" class="btn-secondary-custom" style="display: inline-block;">Přihlášení</a>
+                        <a href="./Login.php" class="btn-secondary-custom nav-btn">Přihlášení</a>
                     <?php else: ?>
-                        <a href="../back/logout.php" class="btn-secondary-custom" style="display: inline-block;">Odhlásit se</a>
+                        <a href="../back/logout.php" class="btn-secondary-custom nav-btn">Odhlásit se</a>
                     <?php endif; ?>
                 </li>
             </ul>
@@ -371,7 +369,14 @@ try {
 
                                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                                         <td><?= htmlspecialchars($data['datum_prihlaseni'] ?? '-') ?></td>
-                                        <td><?= $data['zaplaceno'] ? '✓ Ano' : '✗ Ne' ?></td>
+                                        <td>
+                                            <form method="POST" action="../back/update_zaplaceno.php" style="display: inline;">
+                                                <input type="hidden" name="id_prihlaska" value="<?= htmlspecialchars($data['id_prihlaska']) ?>">
+                                                <button type="submit" class="btn-zaplaceno-toggle" title="Klikněte pro změnu">
+                                                    <?= $data['zaplaceno'] ? '<span class="paid">✓ Ano</span>' : '<span class="unpaid">✗ Ne</span>' ?>
+                                                </button>
+                                            </form>
+                                        </td>
                                         <td>
                                             <form method="POST" action="../back/delete_prihlaska.php" onsubmit="return confirm('Opravdu chcete tuto přihlášku smazat?');" style="display: inline;">
                                                 <input type="hidden" name="id_prihlaska" value="<?= htmlspecialchars($data['id_prihlaska']) ?>">
