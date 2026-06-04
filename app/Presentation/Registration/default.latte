@@ -1,0 +1,53 @@
+{block content}
+<div class="section-container">
+    <div class="content-wrapper">
+        <div class="card-premium">
+            <h2 class="text-primary mb-4">Přihláška do závodu</h2>
+            
+            <form n:name=registrationForm class="form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Tým a řidič</h4>
+                        <div class="form-group mb-3">
+                            <label n:name=team class="form-label">Tým</label>
+                            <input n:name=team class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label n:name=ridic_jmeno class="form-label">Jméno řidiče</label>
+                            <input n:name=ridic_jmeno class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label n:name=ridic_email class="form-label">Email</label>
+                            <input n:name=ridic_email class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Vozidlo</h4>
+                        <div class="form-group mb-3">
+                            <label n:name=auto_znacka class="form-label">Značka</label>
+                            <input n:name=auto_znacka class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label n:name=auto_typ class="form-label">Typ</label>
+                            <input n:name=auto_typ class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label n:name=info class="form-label">Poznámka</label>
+                    <textarea n:name=info class="form-control"></textarea>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input n:name=souhlas class="form-check-input">
+                    <label n:name=souhlas class="form-check-label">Souhlasím s podmínkami závodu</label>
+                </div>
+
+                <button n:name=send class="btn-primary-custom">Odeslat přihlášku</button>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}

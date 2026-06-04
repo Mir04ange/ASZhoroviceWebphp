@@ -1,0 +1,96 @@
+{block content}
+<!-- HERO SECTION - CAROUSEL -->
+<div class="carousel-container" id="home">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+            <div n:foreach="$carouselPaths as $index => $img" n:class="carousel-item, $iterator->first ? active">
+                <img class="d-block w-100" 
+                     src="{if preg_match('~^https?://~', $img)}{$img}{else}{$basePath}/uploads/carousel/{$img}{/if}" 
+                     alt="Obrázek {$index+1}"
+                     loading="lazy"
+                     onerror="this.src='https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=1200&h=600&fit=crop'">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 6 15 12 9 18"></polyline>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- CTA SECTION -->
+<div class="section-container" style="background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(29, 53, 87, 0.1));">
+    <div class="content-wrapper text-center">
+        <h2 class="mb-3">Připravte se na start!</h2>
+        <p class="text-secondary mb-4" style="font-size: 1.1rem;">Datum závodu: <strong style="color: var(--primary);">{$raceDate}</strong></p>
+        <a n:href="Registration:default" class="btn-primary-custom">Přihlásit se do závodu</a>
+    </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<div class="section-container" id="about">
+    <div class="content-wrapper">
+        <div class="section-title">
+            <h2>O nás</h2>
+        </div>
+
+        <div class="about-section">
+            <h3 class="about-title">Auto sport klub Hořovice</h3>
+            <div class="about-subtitle">Motoristé, připravte se na start! 🏁</div>
+            <p class="about-text">
+                Máte slabost pro auta, závody a pořádný motoristický adrenalin? 
+                Chcete zažít rallye z první řady a podílet se na akcích, kde se točí volanty, 
+                pálí gumy a tleská stovky fanoušků? Pak jste na správné adrese – 
+                <span class="about-highlight">Auto sport klub Hořovice</span>!
+            </p>
+            <div class="about-subtitle">Kdo vlastně jsme?</div>
+            <p class="about-text">
+                Jsme parta nadšenců pod <span class="about-highlight">Autoklubem ČR</span>. 
+                Hlavní náplní je pořádání automobilových soutěží – od rallye až po orientační jízdy.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- REGISTRATIONS SECTION -->
+<div class="section-container" id="zavody">
+    <div class="content-wrapper">
+        <div class="section-title">
+            <h2>Poslední přihlášky</h2>
+        </div>
+
+        <div n:if="!$registrations" class="card-premium text-center p-5">
+            <p class="text-secondary">Zatím žádné přihlášky.</p>
+        </div>
+        
+        <div n:if="$registrations" class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Řidič</th>
+                        <th>Vozidlo</th>
+                        <th>Datum přihlášky</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr n:foreach="$registrations as $reg">
+                        <td>{$reg->team}</td>
+                        <td>{$reg->ridic_jmeno}</td>
+                        <td>{$reg->auto_znacka} {$reg->auto_typ}</td>
+                        <td>{$reg->datum_prihlaseni|date:'j. n. Y H:i'}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{/block}
